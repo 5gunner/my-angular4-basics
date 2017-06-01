@@ -13,7 +13,7 @@ export class MyNewComponentComponent implements OnInit {
     nationality: 'Nepalese'
   }];
 
-  singleStyle = "text-center";
+  singleStyle = 'text-ecnter';
 
   styles = {
     'text-center': true,
@@ -26,7 +26,7 @@ export class MyNewComponentComponent implements OnInit {
   }
 
   alerter(event) {
-    console.log(event);
+    console.log(event, 'This is working');
   }
 
 }
