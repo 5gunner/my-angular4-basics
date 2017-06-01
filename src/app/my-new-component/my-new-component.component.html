@@ -1,0 +1,16 @@
+<p [class]="singleStyle" >
+  my-new-component works!
+</p>
+<button class="btn-primary" (click)="alerter($event)" (copy)="alerter($event)">CLICK</button>
+
+<div *ngIf="me; else falseTemplate" >
+  <h3 (mouseover)="alertsys.pogo($event)">Array exists</h3>
+  <div *ngFor="let item of me">
+    {{item.name}} <br>
+    {{item.age}} <br>
+    {{item.nationality}}
+  </div>
+</div>
+<ng-template #falseTemplate>
+  <h3>Array Does not exists.</h3>
+</ng-template>
