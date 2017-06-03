@@ -1,16 +1,9 @@
-<p [class]="singleStyle" >
-  my-new-component works!
-</p>
-<button class="btn-primary" (click)="alerter($event)" (copy)="alerter($event)">CLICK</button>
+<md-input-container>
+  <input mdInput placeholder="Name" #inputMarker (keyup.enter)="addNameToList(inputMarker.value)">
+</md-input-container>
+<br>
+<button md-raised-button (click)="addNameToList(inputMarker.value)">PUSH</button>
 
-<div *ngIf="me; else falseTemplate" >
-  <h3 (mouseover)="alertsys.pogo($event)">Array exists</h3>
-  <div *ngFor="let item of me">
-    {{item.name}} <br>
-    {{item.age}} <br>
-    {{item.nationality}}
-  </div>
-</div>
-<ng-template #falseTemplate>
-  <h3>Array Does not exists.</h3>
-</ng-template>
+<md-list>
+ <md-list-item *ngFor="let item of list; let i = index"> {{item}} {{i}} </md-list-item>
+</md-list>

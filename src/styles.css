@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@font-face{
+    font-family: 'bebas';
+    src: url('./assets/fonts/bebas_neue 2/BebasNeue.otf');
+}
+
+body,
+html {
+    font-family: 'Lato' sans-serif;
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+p,
+input,
+textarea,
+button {
+    font-size: 16px !important;
+    font-weight: 400
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'bebas', sans-serif;
+}

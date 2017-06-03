@@ -7,26 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-new-component.component.sass']
 })
 export class MyNewComponentComponent implements OnInit {
-  me = [{
-    name: 'Pratik Rai',
-    age: 28,
-    nationality: 'Nepalese'
-  }];
-
-  singleStyle = 'text-ecnter';
-
-  styles = {
-    'text-center': true,
-    'text-uppercase': true
-  }
+  list: string[] = [];
 
   constructor(private alertsys: AlerterService) { }
 
   ngOnInit() {
   }
 
-  alerter(event) {
-    console.log(event, 'This is working');
+  addNameToList(par) {
+    this.list.push(par);
   }
 
 }
