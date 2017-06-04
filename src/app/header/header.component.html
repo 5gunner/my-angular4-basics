@@ -1,18 +1,21 @@
-<md-toolbar color="primary" class="header">
-  <a href="" class="logo text-uppercase">{{logoName}}</a>
-  <span class="spacer"></span>
-  <ul class="list-unstyled hidden-xs hidden-sm list-inline">
-    <li><button class="text-uppercase" md-button> Our Scientists </button></li>
-    <li><button class="text-uppercase join" md-raised-button color="accent"> join troop </button></li>
-  </ul>
-  <div class="navigation visible-xs visible-sm">
-    <md-menu #appMenu="mdMenu">
-      <button md-menu-item> Our Scientists </button>
-      <button md-menu-item> join troop </button>
-    </md-menu>
-
-    <button md-icon-button [mdMenuTriggerFor]="appMenu">
-     <md-icon>more_vert</md-icon>
-    </button>
+<header>
+  <div class="container">
+    <md-toolbar class="toolbar">
+      <a href="" class="logo text-uppercase">{{logoName}}</a>
+      <span class="spacer"></span>
+      <ul class="list-unstyled hidden-xs hidden-sm list-inline">
+        <li><button class="text-uppercase" md-button> Our Scientists </button></li>
+        <li><button class="text-uppercase join" md-raised-button> join troop </button></li>
+      </ul>
+      <div class="navigation visible-xs visible-sm">
+        <md-menu #appMenu="mdMenu">
+          <button md-menu-item> Our Scientists </button>
+          <button md-menu-item> join troop </button>
+        </md-menu>
+        <button md-icon-button [mdMenuTriggerFor]="appMenu">
+         <md-icon>more_vert</md-icon>
+        </button>
+      </div>
+    </md-toolbar>
   </div>
-</md-toolbar>
+</header>

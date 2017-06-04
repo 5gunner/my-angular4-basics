@@ -1,8 +1,10 @@
 <md-list>
-  <md-list-item *ngFor="let item of scientists">
-    <md-icon md-list-icon>account_circle</md-icon>
-    <h4 md-line>{{item.name}}</h4>
-    <p md-line>{{item.dialogue}}</p>
-    <md-divider></md-divider>
-  </md-list-item>
+  <a href="">
+    <md-list-item *ngFor="let scientist of scientists">
+      <md-icon md-list-icon>account_box</md-icon>
+      <h4 md-line>{{scientist.name}}</h4>
+      <p md-line> {{scientist.dialogue}} </p>
+    </md-list-item>
+  </a>
+  <md-divider></md-divider>
 </md-list>

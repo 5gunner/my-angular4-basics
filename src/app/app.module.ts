@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
-import { MdButtonModule, MdInputModule, MdToolbarModule, MdMenuModule, MdIconModule, MdListModule } from '@angular/material';
+import { MdButtonModule, MdInputModule, MdToolbarModule, MdMenuModule, MdIconModule, MdListModule, MdCardModule } from '@angular/material';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from './firebase-environment';
@@ -25,7 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
     ScientistsListComponent,
     ScientistsDetailsComponent,
     ScientistItemComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +36,7 @@ import { HomeComponent } from './pages/home/home.component';
     MdMenuModule,
     MdIconModule,
     MdListModule,
+    MdCardModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
