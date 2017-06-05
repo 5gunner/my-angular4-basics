@@ -1,4 +1,5 @@
-import { AlerterService } from './alerter.service';
+import { ScientistDisplayService } from './shared/services/scientist-display.service';
+import { FirebaseService } from './shared/services/firebase.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,8 +15,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { ScientistsListComponent } from './scientists/scientists-list/scientists-list.component';
 import { ScientistsDetailsComponent } from './scientists/scientists-details/scientists-details.component';
-import { ScientistItemComponent } from './scientists/scientists-list/scientist-item/scientist-item.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PaintDirective } from './directives/paint.directive';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,8 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     ScientistsListComponent,
     ScientistsDetailsComponent,
-    ScientistItemComponent,
-    HomeComponent
+    HomeComponent,
+    PaintDirective
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,7 @@ import { HomeComponent } from './pages/home/home.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AlerterService],
+  providers: [FirebaseService, ScientistDisplayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

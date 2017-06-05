@@ -1,4 +1,3 @@
-import { AlerterService } from './../alerter.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MyNewComponentComponent implements OnInit {
   list: string[] = [];
 
-  constructor(private alertsys: AlerterService) { }
+  constructor() { }
 
   ngOnInit() {
   }

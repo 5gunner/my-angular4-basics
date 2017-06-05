@@ -7,5 +7,8 @@ import { state, style, animate, transition, trigger, keyframes } from '@angular/
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  
+
+  recieveMsg(event) {
+    console.log(event);
+  }
 }
