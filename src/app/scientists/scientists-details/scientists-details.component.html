@@ -1,9 +1,9 @@
 <md-card>
-  <img [src]="displayScientist.imgUrl" class="md-card-image img-responsive" alt="image caption">
+  <img src="{{displayScientist?.imgUrl}}" class="md-card-image img-responsive" alt="image caption">
   <md-card-content>
-    <h2>{{displayScientist.name}}</h2>
-    <p>{{displayScientist.dialogue}}</p>
-    <p>{{displayScientist.about}}</p>
+    <h2>{{displayScientist?.name}}</h2>
+    <p>{{displayScientist?.dialogue}}</p>
+    <p>{{displayScientist?.about}}</p>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end center">
     <button md-button class="text-uppercase">edit</button>

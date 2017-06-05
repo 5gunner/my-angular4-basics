@@ -1,3 +1,4 @@
+import { Scientist } from './../../shared/models/scientist.model';
 import { ScientistDisplayService } from './../../shared/services/scientist-display.service';
 import { Listing } from './../../shared/models/listings.model';
 import { FirebaseService } from './../../shared/services/firebase.service';
@@ -9,16 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./scientists-details.component.sass']
 })
 export class ScientistsDetailsComponent implements OnInit {
-  private scientists: Listing[];
-  private displayScientist: {} = {
-    name: '',
-    dialogue: '',
-    about: '',
-    power: '',
-    imgUrl: ''
-  };
+  public scientists: Listing[];
+  public displayScientist;
 
-  constructor(private fbService: FirebaseService, private scientistDisplayService: ScientistDisplayService) {
+  constructor(
+    private fbService: FirebaseService,
+    private scientistDisplayService: ScientistDisplayService
+    ) {
     this.fbService.listData().subscribe(scientists => {
       this.scientists = scientists;
       this.displayScientist = scientists[0];
@@ -27,7 +25,7 @@ export class ScientistsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.scientistDisplayService.getNumber().subscribe(num => {
-      this.displayScientist = this.scientists[num];
+      this.displayScientist = <any>this.scientists[num];
     })
   }
 

@@ -8,7 +8,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./scientists-list.component.sass']
 })
 export class ScientistsListComponent implements OnInit {
-  private scientists: Listing[];
+  public scientists: Listing[];
   @Output() scientistNumber: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private fbService: FirebaseService) {
