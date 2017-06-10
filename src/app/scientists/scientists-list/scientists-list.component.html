@@ -1,5 +1,5 @@
 <md-list>
-  <a *ngFor="let scientist of scientists; let i = index" (click)="passNumber(i)">
+  <a class="list-item" *ngFor="let scientist of scientists; let i = index" (click)="setDisplayNumber(i)">
     <md-list-item>
       <md-icon md-list-icon>account_box</md-icon>
       <h4 md-line>{{scientist.name}}</h4>

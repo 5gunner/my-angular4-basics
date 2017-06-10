@@ -1,3 +1,4 @@
+import { AuthService } from './../shared/services/auth-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public logoName = 'mad labs';
+  public authentication = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) {
+    this.authService.user.subscribe(auth => {
+      if (auth) {
+        this.authentication = true;
+      } else {
+        this.authentication = false;
+      }
+    })
+  }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

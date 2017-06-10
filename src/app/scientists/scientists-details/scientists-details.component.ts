@@ -10,8 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./scientists-details.component.sass']
 })
 export class ScientistsDetailsComponent implements OnInit {
+
   public scientists: Listing[];
   public displayScientist;
+  public number;
 
   constructor(
     private fbService: FirebaseService,
@@ -24,7 +26,9 @@ export class ScientistsDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.scientistDisplayService.getNumber().subscribe(num => {
+    this.number = 0;
+    this.scientistDisplayService.setNumberEmitter.subscribe(num => {
+      this.number = num;
       this.displayScientist = <any>this.scientists[num];
     })
   }

@@ -6,7 +6,7 @@
     <p>{{displayScientist?.about}}</p>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end center">
-    <button md-button class="text-uppercase">edit</button>
+    <button md-button class="text-uppercase" [routerLink]="['/edit-scientist', number]" [queryParams]="{allowedEdit: number === 0? '1' : '0'}">edit</button>
     <button md-button color="warn" class="text-uppercase">delete</button>
   </md-card-actions>
 </md-card>

@@ -1,3 +1,4 @@
+import { ScientistDisplayService } from './../../shared/services/scientist-display.service';
 import { Listing } from './../../shared/models/listings.model';
 import { FirebaseService } from './../../shared/services/firebase.service';
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
@@ -9,9 +10,8 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ScientistsListComponent implements OnInit {
   public scientists: Listing[];
-  @Output() scientistNumber: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private fbService: FirebaseService) {
+  constructor(private fbService: FirebaseService, private displayService: ScientistDisplayService) {
     this.fbService.listData().subscribe(scientists => {
       this.scientists = scientists;
     });
@@ -19,7 +19,7 @@ export class ScientistsListComponent implements OnInit {
 
   ngOnInit() { }
 
-  passNumber(num) {
-    this.scientistNumber.emit(num);
+  setDisplayNumber(num) {
+    this.displayService.setNumber(num);
   }
 }

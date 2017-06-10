@@ -1,8 +1,9 @@
 <div class="row home-container">
   <div class="container">
     <div class="col-sm-4 list">
-      <app-scientists-list (scientistNumber)="setDisplayScientist($event)"></app-scientists-list>
-      <button md-raised-button class="text-uppercase join">join troop</button>
+      <app-scientists-list></app-scientists-list>
+      <button md-raised-button class="text-uppercase join" (click)="openDialog()" appPaint>join troop</button>
+      <router-outlet></router-outlet>
     </div>
     <div class="col-sm-8 details">
       <app-scientists-details></app-scientists-details>
