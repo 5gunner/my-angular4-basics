@@ -19,7 +19,7 @@ import {
   MdListModule,
   MdCardModule,
   MdDialogModule,
-  MdSnackBarModule
+  MdSnackBarModule,
 } from '@angular/material';
 
 import { AngularFireModule } from 'angularfire2';

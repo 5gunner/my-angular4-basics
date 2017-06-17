@@ -6,6 +6,6 @@
     <p>{{displayScientist?.about}}</p>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end center">
-    <button md-button class="text-uppercase" [routerLink]="['/edit-scientist', number]">edit</button>
+    <button md-button class="text-uppercase" (click)="setRouterParam('edit-scientist', number)" [routerLink]="['/edit-scientist', number]">edit</button>
   </md-card-actions>
 </md-card>

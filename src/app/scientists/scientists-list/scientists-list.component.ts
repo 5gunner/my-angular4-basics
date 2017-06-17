@@ -14,13 +14,13 @@ export class ScientistsListComponent implements OnInit {
   constructor(
     private fbService: FirebaseService,
     private displayService: ScientistDisplayService
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.fbService.listData().subscribe(scientists => {
       this.scientists = scientists;
     });
   }
-
-  ngOnInit() { }
 
   setDisplayNumber(num) {
     this.displayService.setNumber(num);

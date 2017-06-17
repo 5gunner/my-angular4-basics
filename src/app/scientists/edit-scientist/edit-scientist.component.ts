@@ -1,3 +1,5 @@
+import { FirebaseService } from './../../shared/services/firebase.service';
+import { Listing } from './../../shared/models/listings.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -7,13 +9,22 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./edit-scientist.component.sass']
 })
 export class EditScientistComponent implements OnInit {
-  public param;
-  constructor(private routeParam: ActivatedRoute) { }
+  public scientist: Listing;
+  public scientistNumber;
+  constructor(
+    private routeParam: ActivatedRoute,
+    private fbService: FirebaseService
+  ) { }
 
   ngOnInit() {
     this.routeParam.params.subscribe((param: Params) => {
-      this.param = param['id'];
+      this.scientistNumber = param['id'];
     });
+
+    this.fbService.listData().subscribe((scientist) => {
+      this.scientist = scientist[this.scientistNumber];
+      console.log(this.scientist);
+    })
   }
 
 }

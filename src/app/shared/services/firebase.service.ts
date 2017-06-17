@@ -9,7 +9,6 @@ export class FirebaseService {
   constructor(private db: AngularFireDatabase) { }
 
   listData(): Observable<Listing[]> {
-    this.items = this.db.list('/scientists') as FirebaseListObservable<Listing[]>;
-    return this.items;
+    return this.db.list('/scientists') as FirebaseListObservable<Listing[]>;
   }
 }

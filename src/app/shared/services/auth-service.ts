@@ -30,7 +30,11 @@ export class AuthService {
     }).then(() => {
       this.dialog.closeAll();
     }).then(() => {
-      this.router.navigate([this.location]);
+      if (this.location === 'edit-scientist') {
+        this.router.navigate([this.location, this.param]);
+      } else {
+        this.router.navigate([this.location]);
+      }
     });
   }
 

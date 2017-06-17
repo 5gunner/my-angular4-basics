@@ -1,3 +1,4 @@
+import { AuthService } from './../../shared/services/auth-service';
 import { Scientist } from './../../shared/models/scientist.model';
 import { ScientistDisplayService } from './../../shared/services/scientist-display.service';
 import { Listing } from './../../shared/models/listings.model';
@@ -17,7 +18,8 @@ export class ScientistsDetailsComponent implements OnInit {
 
   constructor(
     private fbService: FirebaseService,
-    private scientistDisplayService: ScientistDisplayService
+    private scientistDisplayService: ScientistDisplayService,
+    private authService: AuthService
     ) {
     this.fbService.listData().subscribe(scientists => {
       this.scientists = scientists;
@@ -31,6 +33,10 @@ export class ScientistsDetailsComponent implements OnInit {
       this.number = num;
       this.displayScientist = <any>this.scientists[num];
     })
+  }
+
+  setRouterParam(location, num) {
+    this.authService.setRouterParam(location, num);
   }
 
 }
