@@ -39,7 +39,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__pages_home_home_component__["a" /* HomeComponent */], pathMatch: 'full' },
-    { path: 'new-scientist', component: __WEBPACK_IMPORTED_MODULE_4__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */] },
+    { path: 'new-scientist', canActivate: [__WEBPACK_IMPORTED_MODULE_0__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_4__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */] },
     { path: 'edit-scientist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_0__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_2__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */] }
 ];
 var AppRoutingModule = (function () {
@@ -107,7 +107,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("./src/app/app.component.html"),
         styles: [__webpack_require__("./src/app/app.component.sass")]
@@ -122,29 +122,30 @@ AppComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__ = __webpack_require__("./src/app/shared/services/auth-service.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__my_new_component_my_new_component_component__ = __webpack_require__("./src/app/my-new-component/my-new-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase_environment__ = __webpack_require__("./src/app/firebase-environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__scientists_scientists_list_scientists_list_component__ = __webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_details_scientists_details_component__ = __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_home_home_component__ = __webpack_require__("./src/app/pages/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__directives_paint_directive__ = __webpack_require__("./src/app/directives/paint.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__scientists_new_scientist_new_scientist_component__ = __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__scientists_edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__my_new_component_my_new_component_component__ = __webpack_require__("./src/app/my-new-component/my-new-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__firebase_environment__ = __webpack_require__("./src/app/firebase-environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_list_scientists_list_component__ = __webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__scientists_scientists_details_scientists_details_component__ = __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_home_home_component__ = __webpack_require__("./src/app/pages/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__directives_paint_directive__ = __webpack_require__("./src/app/directives/paint.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__scientists_new_scientist_new_scientist_component__ = __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__scientists_edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -175,49 +176,52 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__my_new_component_my_new_component_component__["a" /* MyNewComponentComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__scientists_scientists_list_scientists_list_component__["a" /* ScientistsListComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_details_scientists_details_component__["a" /* ScientistsDetailsComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__directives_paint_directive__["a" /* PaintDirective */],
-            __WEBPACK_IMPORTED_MODULE_20__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__login_login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__my_new_component_my_new_component_component__["a" /* MyNewComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_list_scientists_list_component__["a" /* ScientistsListComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__scientists_scientists_details_scientists_details_component__["a" /* ScientistsDetailsComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__directives_paint_directive__["a" /* PaintDirective */],
+            __WEBPACK_IMPORTED_MODULE_21__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__login_login_login_component__["a" /* LoginComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["b" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["c" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["d" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["e" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["f" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["g" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_11_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_12__firebase_environment__["a" /* environment */].firebase, 'my-app'),
-            __WEBPACK_IMPORTED_MODULE_13_angularfire2_database__["a" /* AngularFireDatabaseModule */],
-            __WEBPACK_IMPORTED_MODULE_14_angularfire2_auth__["a" /* AngularFireAuthModule */],
-            __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_10__angular_material__["h" /* MdDialogModule */]
+            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["b" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["c" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["e" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["f" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["g" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_12_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_13__firebase_environment__["a" /* environment */].firebase, 'my-app'),
+            __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__["a" /* AngularFireDatabaseModule */],
+            __WEBPACK_IMPORTED_MODULE_15_angularfire2_auth__["a" /* AngularFireAuthModule */],
+            __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["h" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_material__["i" /* MdSnackBarModule */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_4__shared_services_firebase_service__["a" /* FirebaseService */],
-            __WEBPACK_IMPORTED_MODULE_3__shared_services_scientist_display_service__["a" /* ScientistDisplayService */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_guard_service__["a" /* AuthGuardService */],
-            __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__["a" /* AuthService */]
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_firebase_service__["a" /* FirebaseService */],
+            __WEBPACK_IMPORTED_MODULE_4__shared_services_scientist_display_service__["a" /* ScientistDisplayService */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_auth_guard_service__["a" /* AuthGuardService */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__["a" /* DialogService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_22__login_login_login_component__["a" /* LoginComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_23__login_login_login_component__["a" /* LoginComponent */]]
     })
 ], AppModule);
 
@@ -252,10 +256,10 @@ var PaintDirective = (function () {
     return PaintDirective;
 }());
 PaintDirective = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Directive */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Directive */])({
         selector: '[appPaint]'
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* ElementRef */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* ElementRef */]) === "function" && _b || Object])
 ], PaintDirective);
 
 var _a, _b;
@@ -286,7 +290,7 @@ var environment = {
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"container\">\n    <md-toolbar class=\"toolbar\">\n      <a href=\"\" class=\"logo text-uppercase\">{{logoName}}</a>\n      <span class=\"spacer\"></span>\n      <ul class=\"list-unstyled hidden-xs hidden-sm list-inline\">\n        <li><button class=\"text-uppercase\" md-button [routerLink]=\"['/']\"> Our Scientists </button></li>\n        <li *ngIf=\"!authentication\"><button class=\"text-uppercase join\" md-raised-button [routerLink]=\"['/new-scientist']\"> join troop </button></li>\n        <li *ngIf=\"authentication\"><button class=\"text-uppercase\" appPaint md-button (click)=\"logout()\"> Logout </button></li>\n      </ul>\n      <div class=\"navigation visible-xs visible-sm\">\n        <md-menu #appMenu=\"mdMenu\">\n          <button md-menu-item> Our Scientists </button>\n          <button *ngIf=\"!authentication\" appPaint md-menu-item [routerLink]=\"['/new-scientist']\">\n            join troop\n          </button>\n          <button *ngIf=\"authentication\" class=\"text-uppercase\" appPaint md-button (click)=\"logout()\">\n            Logout\n          </button>\n        </md-menu>\n        <button md-icon-button [mdMenuTriggerFor]=\"appMenu\">\n         <md-icon>more_vert</md-icon>\n        </button>\n      </div>\n    </md-toolbar>\n  </div>\n</header>\n"
+module.exports = "<header>\n  <div class=\"col-sm-8 col-sm-offset-2\">\n    <md-toolbar class=\"toolbar\">\n      <a href=\"\" class=\"logo text-uppercase\">{{logoName}}</a>\n      <span class=\"spacer\"></span>\n      <ul class=\"list-unstyled hidden-xs hidden-sm list-inline\">\n        <li>\n          <button class=\"text-uppercase\" md-button [routerLink]=\"['/']\"> Our Scientists </button>\n        </li>\n        <li *ngIf=\"!authentication\">\n          <button class=\"text-uppercase join\" appPaint md-raised-button [routerLink]=\"['new-scientist']\" (click)=\"setRouterParam('new-scientist')\"> join troop </button>\n        </li>\n        <li *ngIf=\"authentication\">\n          <button class=\"text-uppercase\" appPaint md-button (click)=\"logout()\"> Logout </button>\n        </li>\n      </ul>\n      <div class=\"navigation visible-xs visible-sm\">\n        <md-menu #appMenu=\"mdMenu\">\n          <button md-menu-item> Our Scientists </button>\n          <button *ngIf=\"!authentication\" appPaint md-menu-item [routerLink]=\"['/new-scientist']\">\n            join troop\n          </button>\n          <button *ngIf=\"authentication\" class=\"text-uppercase\" appPaint md-button (click)=\"logout()\">\n            Logout\n          </button>\n        </md-menu>\n        <button md-icon-button [mdMenuTriggerFor]=\"appMenu\">\n         <md-icon>more_vert</md-icon>\n        </button>\n      </div>\n    </md-toolbar>\n  </div>\n</header>\n"
 
 /***/ }),
 
@@ -298,7 +302,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "a:hover, a:focus {\n  text-decoration: none; }\n\na.logo {\n  font-size: 2em !important;\n  font-family: 'bebas', sans-serif;\n  letter-spacing: 1px;\n  font-weight: bold;\n  color: #fff;\n  background: #e23636;\n  height: 100%;\n  padding: 5px 10px 0; }\n  @media screen and (min-width: 600) {\n    a.logo {\n      padding: 0 10px; } }\n\n.toolbar {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n  .toolbar span.spacer {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1; }\n  .toolbar ul {\n    padding: 25px 0;\n    margin: 0; }\n    .toolbar ul li {\n      margin: 0;\n      padding: 0; }\n    .toolbar ul button {\n      font-size: .707em; }\n      .toolbar ul button.join {\n        color: #e23636; }\n\nheader {\n  background-color: #f5f5f5; }\n", ""]);
+exports.push([module.i, "a:hover, a:focus {\n  text-decoration: none; }\n\na.logo {\n  font-size: 2em !important;\n  font-family: 'bebas', sans-serif;\n  letter-spacing: 1px;\n  font-weight: bold;\n  color: #fff;\n  background: #e23636;\n  height: 100%;\n  padding: 5px 10px 0; }\n  @media screen and (min-width: 600) {\n    a.logo {\n      padding: 0 10px; } }\n\n.toolbar {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n  .toolbar span.spacer {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1; }\n  .toolbar ul {\n    padding: 25px 0;\n    margin: 0; }\n    .toolbar ul li {\n      margin: 0;\n      padding: 0; }\n    .toolbar ul button {\n      font-size: .707em; }\n\nheader {\n  background-color: #f5f5f5;\n  width: 100%;\n  display: block;\n  overflow: hidden; }\n", ""]);
 
 // exports
 
@@ -312,8 +316,9 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__ = __webpack_require__("./src/app/shared/services/auth-service.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -326,10 +331,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HeaderComponent = (function () {
-    function HeaderComponent(authService) {
+    function HeaderComponent(authService, dialog) {
         var _this = this;
         this.authService = authService;
+        this.dialog = dialog;
         this.logoName = 'mad labs';
         this.authentication = false;
         this.authService.user.subscribe(function (auth) {
@@ -343,21 +350,24 @@ var HeaderComponent = (function () {
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
+    HeaderComponent.prototype.setRouterParam = function (location) {
+        this.authService.setRouterParam(location);
+    };
     HeaderComponent.prototype.logout = function () {
         this.authService.logout();
     };
     return HeaderComponent;
 }());
 HeaderComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["q" /* Component */])({
         selector: 'app-header',
         template: __webpack_require__("./src/app/header/header.component.html"),
         styles: [__webpack_require__("./src/app/header/header.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__["a" /* AuthService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__["a" /* DialogService */]) === "function" && _b || Object])
 ], HeaderComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=header.component.js.map
 
 /***/ }),
@@ -391,7 +401,7 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__ = __webpack_require__("./src/app/shared/services/auth-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -417,12 +427,12 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* Component */])({
         selector: 'app-login',
         template: __webpack_require__("./src/app/login/login/login.component.html"),
         styles: [__webpack_require__("./src/app/login/login/login.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service_service__["a" /* AuthService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
 ], LoginComponent);
 
 var _a;
@@ -483,7 +493,7 @@ var MyNewComponentComponent = (function () {
     return MyNewComponentComponent;
 }());
 MyNewComponentComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-my-new-component',
         template: __webpack_require__("./src/app/my-new-component/my-new-component.component.html"),
         styles: [__webpack_require__("./src/app/my-new-component/my-new-component.component.sass")]
@@ -498,7 +508,7 @@ MyNewComponentComponent = __decorate([
 /***/ "./src/app/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row home-container\">\n  <div class=\"container\">\n    <div class=\"col-sm-4 list\">\n      <app-scientists-list></app-scientists-list>\n      <button md-raised-button class=\"text-uppercase join\" (click)=\"openDialog()\" appPaint>join troop</button>\n      <router-outlet></router-outlet>\n    </div>\n    <div class=\"col-sm-8 details\">\n      <app-scientists-details></app-scientists-details>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row home-container\">\n  <div class=\"col-sm-8 col-sm-offset-2\">\n    <div class=\"col-sm-4 list\">\n      <app-scientists-list></app-scientists-list>\n      <button\n        md-raised-button\n        class=\"text-uppercase join\"\n        [routerLink]=\"['new-scientist']\"\n        appPaint\n        (click)=\"setRouterParam('new-scientist')\">join troop</button>\n      <router-outlet></router-outlet>\n    </div>\n    <div class=\"col-sm-8 details\">\n      <app-scientists-details></app-scientists-details>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -510,7 +520,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".home-container {\n  padding: 32px; }\n", ""]);
+exports.push([module.i, ".home-container {\n  padding: 32px; }\n\nbutton.join {\n  margin-top: 2rem; }\n", ""]);
 
 // exports
 
@@ -524,8 +534,8 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
@@ -545,48 +555,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomeComponent = (function () {
-    function HomeComponent(fbData, scientistDisplayService, dialog) {
+    function HomeComponent(fbData, scientistDisplayService, dialog, authService) {
         var _this = this;
         this.fbData = fbData;
         this.scientistDisplayService = scientistDisplayService;
         this.dialog = dialog;
-        this.passMsg = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* EventEmitter */]();
+        this.authService = authService;
+        this.passMsg = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]();
         this.fbData.listData().subscribe(function (scientists) {
             _this.scientists = scientists;
         });
     }
     HomeComponent.prototype.ngOnInit = function () { };
+    HomeComponent.prototype.setRouterParam = function (location) {
+        this.authService.setRouterParam(location);
+    };
     HomeComponent.prototype.setDisplayScientist = function (num) {
         this.scientistDisplayService.setNumber(num);
         this.displayNumber = num;
     };
-    HomeComponent.prototype.openDialog = function () {
-        var _this = this;
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__login_login_login_component__["a" /* LoginComponent */]);
-        dialogRef.afterClosed().subscribe(function (result) {
-            _this.selectedOption = result;
-        });
-    };
     return HomeComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["_14" /* ViewChild */])('clickButton'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* ElementRef */]) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["z" /* ViewChild */])('clickButton'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */]) === "function" && _a || Object)
 ], HomeComponent.prototype, "clickButton", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* EventEmitter */]) === "function" && _b || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["l" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]) === "function" && _b || Object)
 ], HomeComponent.prototype, "passMsg", void 0);
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["q" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("./src/app/pages/home/home.component.html"),
         styles: [__webpack_require__("./src/app/pages/home/home.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["i" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["i" /* MdDialog */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _f || Object])
 ], HomeComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -594,7 +601,7 @@ var _a, _b, _c, _d, _e;
 /***/ "./src/app/scientists/edit-scientist/edit-scientist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p *ngIf=\"!isAllowed\">\n  Sorry you are not allowed to edit.\n</p>\n<p *ngIf=\"isAllowed\">\n  {{param}}\n</p>\n"
+module.exports = "\n"
 
 /***/ }),
 
@@ -637,21 +644,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var EditScientistComponent = (function () {
     function EditScientistComponent(routeParam) {
         this.routeParam = routeParam;
-        this.isAllowed = false;
     }
     EditScientistComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.routeParam.params.subscribe(function (param) {
             _this.param = param['id'];
         });
-        this.routeParam.queryParams.subscribe(function (queryParam) {
-            _this.isAllowed = queryParam['allowedEdit'] === '1' ? true : false;
-        });
     };
     return EditScientistComponent;
 }());
 EditScientistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-edit-scientist',
         template: __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.html"),
         styles: [__webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.sass")]
@@ -713,7 +716,7 @@ var NewScientistComponent = (function () {
     return NewScientistComponent;
 }());
 NewScientistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-new-scientist',
         template: __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.html"),
         styles: [__webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.sass")]
@@ -728,7 +731,7 @@ NewScientistComponent = __decorate([
 /***/ "./src/app/scientists/scientists-details/scientists-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\n  <img src=\"{{displayScientist?.imgUrl}}\" class=\"md-card-image img-responsive\" alt=\"image caption\">\n  <md-card-content>\n    <h2>{{displayScientist?.name}}</h2>\n    <p>{{displayScientist?.dialogue}}</p>\n    <p>{{displayScientist?.about}}</p>\n  </md-card-content>\n  <md-card-actions layout=\"row\" layout-align=\"end center\">\n    <button md-button class=\"text-uppercase\" [routerLink]=\"['/edit-scientist', number]\" [queryParams]=\"{allowedEdit: number === 0? '1' : '0'}\">edit</button>\n    <button md-button color=\"warn\" class=\"text-uppercase\">delete</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<md-card>\n  <img src=\"{{displayScientist?.imgUrl}}\" class=\"md-card-image img-responsive\" alt=\"image caption\">\n  <md-card-content>\n    <h2>{{displayScientist?.name}}</h2>\n    <p>{{displayScientist?.dialogue}}</p>\n    <p>{{displayScientist?.about}}</p>\n  </md-card-content>\n  <md-card-actions layout=\"row\" layout-align=\"end center\">\n    <button md-button class=\"text-uppercase\" [routerLink]=\"['/edit-scientist', number]\">edit</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
@@ -791,7 +794,7 @@ var ScientistsDetailsComponent = (function () {
     return ScientistsDetailsComponent;
 }());
 ScientistsDetailsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["q" /* Component */])({
         selector: 'app-scientists-details',
         template: __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.html"),
         styles: [__webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.sass")]
@@ -865,7 +868,7 @@ var ScientistsListComponent = (function () {
     return ScientistsListComponent;
 }());
 ScientistsListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_12" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["q" /* Component */])({
         selector: 'app-scientists-list',
         template: __webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.html"),
         styles: [__webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.sass")]
@@ -882,9 +885,10 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_service_service__ = __webpack_require__("./src/app/shared/services/auth-service.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuardService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -898,35 +902,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AuthGuardService = (function () {
-    function AuthGuardService(authService, router) {
-        this.authService = authService;
+    function AuthGuardService(afAuth, router, dialog) {
+        this.afAuth = afAuth;
         this.router = router;
+        this.dialog = dialog;
     }
     AuthGuardService.prototype.canActivate = function (route, state) {
-        return;
-        // return this.authService.user.subscribe((state) => {
-        //   if(state.)
-        // });
+        var _this = this;
+        return this.afAuth.authState.map(function (auth) {
+            if (!auth) {
+                _this.dialog.openDialog();
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
     };
     return AuthGuardService;
 }());
 AuthGuardService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__auth_service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__auth_service_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */]) === "function" && _c || Object])
 ], AuthGuardService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=auth-guard.service.js.map
 
 /***/ }),
 
-/***/ "./src/app/shared/services/auth-service.service.ts":
+/***/ "./src/app/shared/services/auth-service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -939,9 +953,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var AuthService = (function () {
-    function AuthService(afAuth) {
+    function AuthService(afAuth, router, dialog, snackBar) {
         this.afAuth = afAuth;
+        this.router = router;
+        this.dialog = dialog;
+        this.snackBar = snackBar;
         this.user = afAuth.authState;
     }
     AuthService.prototype.isAuthenticated = function () {
@@ -950,21 +969,79 @@ var AuthService = (function () {
     AuthService.prototype.login = function () {
         var _this = this;
         this.afAuth.auth.signInAnonymously().then(function () {
-            console.log(_this.user);
+            _this.snackBarMsg('LOGGED IN');
+        }).then(function () {
+            _this.dialog.closeAll();
+        }).then(function () {
+            _this.router.navigate([_this.location]);
         });
     };
+    AuthService.prototype.snackBarMsg = function (msg) {
+        this.snackBar.open('STATUS: ', msg, {
+            duration: 2000
+        });
+    };
+    AuthService.prototype.setRouterParam = function (location, param) {
+        if (param === void 0) { param = false; }
+        this.location = location;
+        this.param = param;
+    };
     AuthService.prototype.logout = function () {
-        this.afAuth.auth.signOut();
+        var _this = this;
+        this.afAuth.auth.signOut().then(function () {
+            _this.snackBarMsg('LOGGED OUT');
+        }).then(function () {
+            _this.router.navigate(['/']);
+        });
     };
     return AuthService;
 }());
 AuthService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["j" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["j" /* MdDialog */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["k" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["k" /* MdSnackBar */]) === "function" && _d || Object])
 ], AuthService);
 
+var _a, _b, _c, _d;
+//# sourceMappingURL=auth-service.js.map
+
+/***/ }),
+
+/***/ "./src/app/shared/services/dialog.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DialogService = (function () {
+    function DialogService(dialog) {
+        this.dialog = dialog;
+    }
+    DialogService.prototype.openDialog = function () {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__login_login_login_component__["a" /* LoginComponent */]);
+    };
+    return DialogService;
+}());
+DialogService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialog */]) === "function" && _a || Object])
+], DialogService);
+
 var _a;
-//# sourceMappingURL=auth-service.service.js.map
+//# sourceMappingURL=dialog.service.js.map
 
 /***/ }),
 
@@ -1027,7 +1104,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ScientistDisplayService = (function () {
     function ScientistDisplayService() {
-        this.setNumberEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* EventEmitter */]();
+        this.setNumberEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* EventEmitter */]();
         this.subject = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
     }
     // setNumber(num: number): void {
