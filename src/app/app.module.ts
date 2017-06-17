@@ -1,4 +1,5 @@
-import { AuthService } from './shared/services/auth-service.service';
+import { DialogService } from './shared/services/dialog.service';
+import { AuthService } from './shared/services/auth-service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ScientistDisplayService } from './shared/services/scientist-display.service';
@@ -17,7 +18,8 @@ import {
   MdIconModule,
   MdListModule,
   MdCardModule,
-  MdDialogModule
+  MdDialogModule,
+  MdSnackBarModule
 } from '@angular/material';
 
 import { AngularFireModule } from 'angularfire2';
@@ -61,13 +63,16 @@ import { LoginComponent } from './login/login/login.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    MdDialogModule
+    MdDialogModule,
+    MdSnackBarModule
   ],
   providers: [
     FirebaseService,
     ScientistDisplayService,
     AuthGuardService,
-    AuthService],
+    AuthService,
+    DialogService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent]
 })

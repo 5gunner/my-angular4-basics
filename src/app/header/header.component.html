@@ -1,12 +1,18 @@
 <header>
-  <div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
     <md-toolbar class="toolbar">
       <a href="" class="logo text-uppercase">{{logoName}}</a>
       <span class="spacer"></span>
       <ul class="list-unstyled hidden-xs hidden-sm list-inline">
-        <li><button class="text-uppercase" md-button [routerLink]="['/']"> Our Scientists </button></li>
-        <li *ngIf="!authentication"><button class="text-uppercase join" md-raised-button [routerLink]="['/new-scientist']"> join troop </button></li>
-        <li *ngIf="authentication"><button class="text-uppercase" appPaint md-button (click)="logout()"> Logout </button></li>
+        <li>
+          <button class="text-uppercase" md-button [routerLink]="['/']"> Our Scientists </button>
+        </li>
+        <li *ngIf="!authentication">
+          <button class="text-uppercase join" appPaint md-raised-button [routerLink]="['new-scientist']" (click)="setRouterParam('new-scientist')"> join troop </button>
+        </li>
+        <li *ngIf="authentication">
+          <button class="text-uppercase" appPaint md-button (click)="logout()"> Logout </button>
+        </li>
       </ul>
       <div class="navigation visible-xs visible-sm">
         <md-menu #appMenu="mdMenu">

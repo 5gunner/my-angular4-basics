@@ -11,7 +11,10 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 export class ScientistsListComponent implements OnInit {
   public scientists: Listing[];
 
-  constructor(private fbService: FirebaseService, private displayService: ScientistDisplayService) {
+  constructor(
+    private fbService: FirebaseService,
+    private displayService: ScientistDisplayService
+  ) {
     this.fbService.listData().subscribe(scientists => {
       this.scientists = scientists;
     });

@@ -1,3 +1,5 @@
+import { AuthService } from './../../shared/services/auth-service';
+import { DialogService } from './../../shared/services/dialog.service';
 import { LoginComponent } from './../../login/login/login.component';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import { ScientistDisplayService } from './../../shared/services/scientist-display.service';
@@ -20,7 +22,9 @@ export class HomeComponent implements OnInit {
   constructor(
     private fbData: FirebaseService,
     private scientistDisplayService: ScientistDisplayService,
-    public dialog: MdDialog) {
+    public dialog: DialogService,
+    private authService: AuthService
+  ) {
     this.fbData.listData().subscribe(scientists => {
       this.scientists = scientists;
     });
@@ -28,15 +32,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() { }
 
+
+  setRouterParam(location) {
+    this.authService.setRouterParam(location);
+  }
+
   setDisplayScientist(num) {
     this.scientistDisplayService.setNumber(num);
     this.displayNumber = num;
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(LoginComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
-    });
   }
 }

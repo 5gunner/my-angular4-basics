@@ -1,8 +1,13 @@
 <div class="row home-container">
-  <div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
     <div class="col-sm-4 list">
       <app-scientists-list></app-scientists-list>
-      <button md-raised-button class="text-uppercase join" (click)="openDialog()" appPaint>join troop</button>
+      <button
+        md-raised-button
+        class="text-uppercase join"
+        [routerLink]="['new-scientist']"
+        appPaint
+        (click)="setRouterParam('new-scientist')">join troop</button>
       <router-outlet></router-outlet>
     </div>
     <div class="col-sm-8 details">
