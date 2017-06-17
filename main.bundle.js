@@ -601,7 +601,7 @@ var _a, _b, _c, _d, _e, _f;
 /***/ "./src/app/scientists/edit-scientist/edit-scientist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n"
+module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>edit scientist</small></b></p>\n    <h1>{{scientist?.name}}</h1>\n    <form>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Name\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Dialog\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Power\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea mdInput placeholder=\"About\"></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Image URL\">\n        </md-input-container>\n      </div>\n    </form>\n    <button class=\"submit text-uppercase\" appPaint md-raised-button>update</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -613,7 +613,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "h1 {\n  margin: 0 0 2rem; }\n\ninput, md-input-container {\n  width: 100%; }\n\n.edit-Scientist {\n  padding: 2rem 0; }\n\np {\n  margin-bottom: 0; }\n", ""]);
 
 // exports
 
@@ -627,8 +627,9 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditScientistComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -641,28 +642,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var EditScientistComponent = (function () {
-    function EditScientistComponent(routeParam) {
+    function EditScientistComponent(routeParam, fbService) {
         this.routeParam = routeParam;
+        this.fbService = fbService;
     }
     EditScientistComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.routeParam.params.subscribe(function (param) {
-            _this.param = param['id'];
+            _this.scientistNumber = param['id'];
+        });
+        this.fbService.listData().subscribe(function (scientist) {
+            _this.scientist = scientist[_this.scientistNumber];
+            console.log(_this.scientist);
         });
     };
     return EditScientistComponent;
 }());
 EditScientistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* Component */])({
         selector: 'app-edit-scientist',
         template: __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.html"),
         styles: [__webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _b || Object])
 ], EditScientistComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=edit-scientist.component.js.map
 
 /***/ }),
@@ -670,7 +677,7 @@ var _a;
 /***/ "./src/app/scientists/new-scientist/new-scientist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  new-scientist works!\n</p>\n"
+module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>add new</small></b></p>\n    <h1>Scientist</h1>\n    <form>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Name\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Dialog\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Power\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea mdInput placeholder=\"About\"></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Image URL\">\n        </md-input-container>\n      </div>\n    </form>\n    <button class=\"submit text-uppercase\" appPaint md-raised-button>submit</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -719,7 +726,7 @@ NewScientistComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
         selector: 'app-new-scientist',
         template: __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.html"),
-        styles: [__webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.sass")]
+        styles: [__webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.sass"), __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.sass")]
     }),
     __metadata("design:paramtypes", [])
 ], NewScientistComponent);
@@ -731,7 +738,7 @@ NewScientistComponent = __decorate([
 /***/ "./src/app/scientists/scientists-details/scientists-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\n  <img src=\"{{displayScientist?.imgUrl}}\" class=\"md-card-image img-responsive\" alt=\"image caption\">\n  <md-card-content>\n    <h2>{{displayScientist?.name}}</h2>\n    <p>{{displayScientist?.dialogue}}</p>\n    <p>{{displayScientist?.about}}</p>\n  </md-card-content>\n  <md-card-actions layout=\"row\" layout-align=\"end center\">\n    <button md-button class=\"text-uppercase\" [routerLink]=\"['/edit-scientist', number]\">edit</button>\n  </md-card-actions>\n</md-card>\n"
+module.exports = "<md-card>\n  <img src=\"{{displayScientist?.imgUrl}}\" class=\"md-card-image img-responsive\" alt=\"image caption\">\n  <md-card-content>\n    <h2>{{displayScientist?.name}}</h2>\n    <p>{{displayScientist?.dialogue}}</p>\n    <p>{{displayScientist?.about}}</p>\n  </md-card-content>\n  <md-card-actions layout=\"row\" layout-align=\"end center\">\n    <button md-button class=\"text-uppercase\" (click)=\"setRouterParam('edit-scientist', number)\" [routerLink]=\"['/edit-scientist', number]\">edit</button>\n  </md-card-actions>\n</md-card>\n"
 
 /***/ }),
 
@@ -757,9 +764,10 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScientistsDetailsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -773,11 +781,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ScientistsDetailsComponent = (function () {
-    function ScientistsDetailsComponent(fbService, scientistDisplayService) {
+    function ScientistsDetailsComponent(fbService, scientistDisplayService, authService) {
         var _this = this;
         this.fbService = fbService;
         this.scientistDisplayService = scientistDisplayService;
+        this.authService = authService;
         this.fbService.listData().subscribe(function (scientists) {
             _this.scientists = scientists;
             _this.displayScientist = scientists[0];
@@ -791,18 +801,21 @@ var ScientistsDetailsComponent = (function () {
             _this.displayScientist = _this.scientists[num];
         });
     };
+    ScientistsDetailsComponent.prototype.setRouterParam = function (location, num) {
+        this.authService.setRouterParam(location, num);
+    };
     return ScientistsDetailsComponent;
 }());
 ScientistsDetailsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["q" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["q" /* Component */])({
         selector: 'app-scientists-details',
         template: __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.html"),
         styles: [__webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
 ], ScientistsDetailsComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=scientists-details.component.js.map
 
 /***/ }),
@@ -854,14 +867,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ScientistsListComponent = (function () {
     function ScientistsListComponent(fbService, displayService) {
-        var _this = this;
         this.fbService = fbService;
         this.displayService = displayService;
+    }
+    ScientistsListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.fbService.listData().subscribe(function (scientists) {
             _this.scientists = scientists;
         });
-    }
-    ScientistsListComponent.prototype.ngOnInit = function () { };
+    };
     ScientistsListComponent.prototype.setDisplayNumber = function (num) {
         this.displayService.setNumber(num);
     };
@@ -973,7 +987,12 @@ var AuthService = (function () {
         }).then(function () {
             _this.dialog.closeAll();
         }).then(function () {
-            _this.router.navigate([_this.location]);
+            if (_this.location === 'edit-scientist') {
+                _this.router.navigate([_this.location, _this.param]);
+            }
+            else {
+                _this.router.navigate([_this.location]);
+            }
         });
     };
     AuthService.prototype.snackBarMsg = function (msg) {
@@ -1068,8 +1087,7 @@ var FirebaseService = (function () {
         this.db = db;
     }
     FirebaseService.prototype.listData = function () {
-        this.items = this.db.list('/scientists');
-        return this.items;
+        return this.db.list('/scientists');
     };
     return FirebaseService;
 }());
