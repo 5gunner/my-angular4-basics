@@ -6,6 +6,7 @@ import { ScientistDisplayService } from './shared/services/scientist-display.ser
 import { FirebaseService } from './shared/services/firebase.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ import { LoginComponent } from './login/login/login.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MdButtonModule,
     MdInputModule,
     MdToolbarModule,
@@ -64,7 +66,8 @@ import { LoginComponent } from './login/login/login.component';
     AngularFireAuthModule,
     AppRoutingModule,
     MdDialogModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [
     FirebaseService,

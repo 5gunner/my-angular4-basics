@@ -5,10 +5,18 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class FirebaseService {
-  items: FirebaseListObservable<Listing[]>;
+  public scientists: FirebaseListObservable<Listing[]>;
   constructor(private db: AngularFireDatabase) { }
 
-  listData(): Observable<Listing[]> {
-    return this.db.list('/scientists') as FirebaseListObservable<Listing[]>;
+  listData() {
+    this.scientists = this.db.list('/scientists').catch((err) => {
+      console.log(err);
+      return err;
+    }) as FirebaseListObservable<Listing[]>;
+    return this.scientists;
+  }
+
+  addScientist(newScientist) {
+    this.db.list('/scientists').push(newScientist);
   }
 }

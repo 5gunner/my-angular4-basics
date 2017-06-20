@@ -2,33 +2,56 @@
   <div class="col-sm-6 col-sm-offset-3">
     <p appPaint class="text-uppercase"><b><small>add new</small></b></p>
     <h1>Scientist</h1>
-    <form>
+    <form #formNew="ngForm">
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Name">
+          <input
+            name="name"
+            [(ngModel)]="newMadScientist.name"
+            mdInput
+            placeholder="Name" required>
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Dialog">
+          <input
+            name="Dialog"
+            [(ngModel)]="newMadScientist.Dialogue"
+            #dialog="ngModel"
+            mdInput
+            placeholder="Dialog"
+            required>
+        </md-input-container>
+        <p *ngIf="dialog.invalid && dialog.touched" > Please type a dialog! </p>
+      </div>
+      <div class="form-group">
+        <md-input-container class="example-full-width">
+          <input
+            name="power"
+            [(ngModel)]="newMadScientist.power"
+            mdInput
+            placeholder="Power" required>
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Power">
+          <textarea
+            name="about"
+            [(ngModel)]="newMadScientist.about"
+            mdInput
+            placeholder="About" required></textarea>
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <textarea mdInput placeholder="About"></textarea>
+          <input
+            name="img"
+            [(ngModel)]="newMadScientist.imgUrl"
+            mdInput
+            placeholder="Image URL" required>
         </md-input-container>
       </div>
-      <div class="form-group">
-        <md-input-container class="example-full-width">
-          <input mdInput placeholder="Image URL">
-        </md-input-container>
-      </div>
+    <button [disabled]="formNew.invalid" (click)="addNewScientist()" class="submit text-uppercase" appPaint md-raised-button>submit</button>
     </form>
-    <button class="submit text-uppercase" appPaint md-raised-button>submit</button>
   </div>
 </div>

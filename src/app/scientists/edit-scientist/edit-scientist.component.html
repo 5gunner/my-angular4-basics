@@ -2,30 +2,30 @@
   <div class="col-sm-6 col-sm-offset-3">
     <p appPaint class="text-uppercase"><b><small>edit scientist</small></b></p>
     <h1>{{scientist?.name}}</h1>
-    <form>
+    <form [formGroup]="editForm">
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Name">
+          <input mdInput placeholder="Name" formControlName="name">
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Dialog">
+          <input mdInput placeholder="Dialog" formControlName="dialog">
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Power">
+          <input mdInput placeholder="Power" formControlName="power">
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <textarea mdInput placeholder="About"></textarea>
+          <textarea mdInput placeholder="About" formControlName="about"></textarea>
         </md-input-container>
       </div>
       <div class="form-group">
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Image URL">
+          <input mdInput placeholder="Image URL" formControlName="imgUrl">
         </md-input-container>
       </div>
     </form>
