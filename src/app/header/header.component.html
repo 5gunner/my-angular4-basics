@@ -1,9 +1,9 @@
 <header>
-  <div class="col-sm-8 col-sm-offset-2">
+  <div class="col-md-8 col-md-offset-2">
     <md-toolbar class="toolbar">
       <a href="" class="logo text-uppercase">{{logoName}}</a>
       <span class="spacer"></span>
-      <ul class="list-unstyled hidden-xs hidden-sm list-inline">
+      <ul class="list-unstyled hidden-xs list-inline">
         <li>
           <button class="text-uppercase" md-button [routerLink]="['/']"> Our Scientists </button>
         </li>
@@ -14,7 +14,7 @@
           <button class="text-uppercase" appPaint md-button (click)="logout()"> Logout </button>
         </li>
       </ul>
-      <div class="navigation visible-xs visible-sm">
+      <div class="navigation visible-xs">
         <md-menu #appMenu="mdMenu">
           <button md-menu-item> Our Scientists </button>
           <button *ngIf="!authentication" appPaint md-menu-item [routerLink]="['/new-scientist']">

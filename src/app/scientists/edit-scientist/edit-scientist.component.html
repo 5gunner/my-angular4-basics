@@ -28,7 +28,8 @@
           <input mdInput placeholder="Image URL" formControlName="imgUrl">
         </md-input-container>
       </div>
+      <button class="submit text-uppercase" appPaint md-raised-button>update</button>
     </form>
-    <button class="submit text-uppercase" appPaint md-raised-button>update</button>
+    <button class="submit text-uppercase" md-raised-button (click)="removeScientist()">delete</button>
   </div>
 </div>

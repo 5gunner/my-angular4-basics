@@ -17,6 +17,10 @@ export class FirebaseService {
   }
 
   addScientist(newScientist) {
-    this.db.list('/scientists').push(newScientist);
+    return this.db.list('/scientists').push(newScientist);
+  }
+
+  removeScientist(id) {
+    return this.scientists.remove(id);
   }
 }

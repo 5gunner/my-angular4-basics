@@ -1,10 +1,24 @@
-<md-list>
-  <a class="list-item" *ngFor="let scientist of scientists; let i = index" (click)="setDisplayNumber(i)">
+<md-list class="visible-sm visible-md visible-lg">
+  <h3 md-subheader>All SCIENTISTS</h3>
+  <a class="list-item"
+    *ngFor="let scientist of scientists; let i = index"
+    (click)="setDisplayNumber(i)">
     <md-list-item>
       <md-icon md-list-icon>account_box</md-icon>
       <h4 md-line>{{scientist.name}}</h4>
       <p md-line> {{scientist.dialogue}} </p>
     </md-list-item>
-    <md-divider></md-divider>
   </a>
 </md-list>
+
+<button md-button [mdMenuTriggerFor]="appMenu" class="visible-xs">
+  <md-icon>list</md-icon> <span>ALL SCIENTISTS</span>
+</button>
+<md-menu #appMenu="mdMenu">
+  <button
+    md-menu-item
+    *ngFor="let scientist of scientists; let i = index"
+    (click)="setDisplayNumber(i)">
+    <span> <md-icon>account_box</md-icon> {{scientist.name}} </span>
+  </button>
+</md-menu>
