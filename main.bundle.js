@@ -17,10 +17,10 @@ webpackEmptyContext.id = "./src async recursive";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scientists_edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_home_home_component__ = __webpack_require__("./src/app/pages/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scientists_scientist_home_scientist_home_component__ = __webpack_require__("./src/app/scientists/scientist-home/scientist-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scientists_edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scientists_new_scientist_new_scientist_component__ = __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* unused harmony export appRoutes */
@@ -38,9 +38,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_3__pages_home_home_component__["a" /* HomeComponent */], pathMatch: 'full' },
-    { path: 'new-scientist', canActivate: [__WEBPACK_IMPORTED_MODULE_0__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_4__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */] },
-    { path: 'edit-scientist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_0__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_2__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_0__scientists_scientist_home_scientist_home_component__["a" /* ScientistHomeComponent */], pathMatch: 'full' },
+    { path: 'new-scientist', canActivate: [__WEBPACK_IMPORTED_MODULE_1__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_4__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */] },
+    { path: 'edit-scientist/:id', canActivate: [__WEBPACK_IMPORTED_MODULE_1__shared_services_auth_guard_service__["a" /* AuthGuardService */]], component: __WEBPACK_IMPORTED_MODULE_3__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -48,11 +48,11 @@ var AppRoutingModule = (function () {
     return AppRoutingModule;
 }());
 AppRoutingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
         ],
-        exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */]]
+        exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */]]
     })
 ], AppRoutingModule);
 
@@ -122,30 +122,26 @@ AppComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scientists_forms_Siteforms_module__ = __webpack_require__("./src/app/scientists/forms/Siteforms.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__server_server_server_module__ = __webpack_require__("./src/app/server/server/server.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_material_module__ = __webpack_require__("./src/app/material/material.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__my_new_component_my_new_component_component__ = __webpack_require__("./src/app/my-new-component/my-new-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__firebase_environment__ = __webpack_require__("./src/app/firebase-environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_list_scientists_list_component__ = __webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__scientists_scientists_details_scientists_details_component__ = __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_home_home_component__ = __webpack_require__("./src/app/pages/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__directives_paint_directive__ = __webpack_require__("./src/app/directives/paint.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__scientists_new_scientist_new_scientist_component__ = __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__scientists_edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_guard_service__ = __webpack_require__("./src/app/shared/services/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__scientists_scientists_list_scientists_list_component__ = __webpack_require__("./src/app/scientists/scientists-list/scientists-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__scientists_scientists_details_scientists_details_component__ = __webpack_require__("./src/app/scientists/scientists-details/scientists-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_paint_directive__ = __webpack_require__("./src/app/directives/paint.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__login_login_login_component__ = __webpack_require__("./src/app/login/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__scientists_scientist_home_scientist_home_component__ = __webpack_require__("./src/app/scientists/scientist-home/scientist-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_pipes_shorten_pipe__ = __webpack_require__("./src/app/shared/pipes/shorten.pipe.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -173,55 +169,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
-
-
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__my_new_component_my_new_component_component__["a" /* MyNewComponentComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__scientists_scientists_list_scientists_list_component__["a" /* ScientistsListComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__scientists_scientists_details_scientists_details_component__["a" /* ScientistsDetailsComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__directives_paint_directive__["a" /* PaintDirective */],
-            __WEBPACK_IMPORTED_MODULE_21__scientists_new_scientist_new_scientist_component__["a" /* NewScientistComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__scientists_edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__login_login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__scientists_scientists_list_scientists_list_component__["a" /* ScientistsListComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__scientists_scientists_details_scientists_details_component__["a" /* ScientistsDetailsComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__directives_paint_directive__["a" /* PaintDirective */],
+            __WEBPACK_IMPORTED_MODULE_17__login_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__shared_pipes_shorten_pipe__["a" /* ShortenPipe */],
+            __WEBPACK_IMPORTED_MODULE_18__scientists_scientist_home_scientist_home_component__["a" /* ScientistHomeComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["b" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["c" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["d" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["e" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["f" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["g" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_12_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_13__firebase_environment__["a" /* environment */].firebase, 'my-app'),
-            __WEBPACK_IMPORTED_MODULE_14_angularfire2_database__["a" /* AngularFireDatabaseModule */],
-            __WEBPACK_IMPORTED_MODULE_15_angularfire2_auth__["a" /* AngularFireAuthModule */],
+            __WEBPACK_IMPORTED_MODULE_9__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["h" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_material__["i" /* MdSnackBarModule */]
+            __WEBPACK_IMPORTED_MODULE_2__material_material_module__["a" /* MaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_1__server_server_server_module__["a" /* ServerModule */],
+            __WEBPACK_IMPORTED_MODULE_0__scientists_forms_Siteforms_module__["a" /* SiteFormsModule */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_5__shared_services_firebase_service__["a" /* FirebaseService */],
-            __WEBPACK_IMPORTED_MODULE_4__shared_services_scientist_display_service__["a" /* ScientistDisplayService */],
-            __WEBPACK_IMPORTED_MODULE_2__shared_services_auth_guard_service__["a" /* AuthGuardService */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_0__shared_services_dialog_service__["a" /* DialogService */]
+            __WEBPACK_IMPORTED_MODULE_8__shared_services_firebase_service__["a" /* FirebaseService */],
+            __WEBPACK_IMPORTED_MODULE_7__shared_services_scientist_display_service__["a" /* ScientistDisplayService */],
+            __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_guard_service__["a" /* AuthGuardService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__shared_services_dialog_service__["a" /* DialogService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_23__login_login_login_component__["a" /* LoginComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_17__login_login_login_component__["a" /* LoginComponent */]]
     })
 ], AppModule);
 
@@ -290,7 +271,7 @@ var environment = {
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"col-sm-8 col-sm-offset-2\">\n    <md-toolbar class=\"toolbar\">\n      <a href=\"\" class=\"logo text-uppercase\">{{logoName}}</a>\n      <span class=\"spacer\"></span>\n      <ul class=\"list-unstyled hidden-xs hidden-sm list-inline\">\n        <li>\n          <button class=\"text-uppercase\" md-button [routerLink]=\"['/']\"> Our Scientists </button>\n        </li>\n        <li *ngIf=\"!authentication\">\n          <button class=\"text-uppercase join\" appPaint md-raised-button [routerLink]=\"['new-scientist']\" (click)=\"setRouterParam('new-scientist')\"> join troop </button>\n        </li>\n        <li *ngIf=\"authentication\">\n          <button class=\"text-uppercase\" appPaint md-button (click)=\"logout()\"> Logout </button>\n        </li>\n      </ul>\n      <div class=\"navigation visible-xs visible-sm\">\n        <md-menu #appMenu=\"mdMenu\">\n          <button md-menu-item> Our Scientists </button>\n          <button *ngIf=\"!authentication\" appPaint md-menu-item [routerLink]=\"['/new-scientist']\">\n            join troop\n          </button>\n          <button *ngIf=\"authentication\" class=\"text-uppercase\" appPaint md-button (click)=\"logout()\">\n            Logout\n          </button>\n        </md-menu>\n        <button md-icon-button [mdMenuTriggerFor]=\"appMenu\">\n         <md-icon>more_vert</md-icon>\n        </button>\n      </div>\n    </md-toolbar>\n  </div>\n</header>\n"
+module.exports = "<header>\n  <div class=\"col-md-8 col-md-offset-2\">\n    <md-toolbar class=\"toolbar\">\n      <a href=\"\" class=\"logo text-uppercase\">{{logoName}}</a>\n      <span class=\"spacer\"></span>\n      <ul class=\"list-unstyled hidden-xs list-inline\">\n        <li>\n          <button class=\"text-uppercase\" md-button [routerLink]=\"['/']\"> Our Scientists </button>\n        </li>\n        <li *ngIf=\"!authentication\">\n          <button class=\"text-uppercase join\" appPaint md-raised-button [routerLink]=\"['new-scientist']\" (click)=\"setRouterParam('new-scientist')\"> join troop </button>\n        </li>\n        <li *ngIf=\"authentication\">\n          <button class=\"text-uppercase\" appPaint md-button (click)=\"logout()\"> Logout </button>\n        </li>\n      </ul>\n      <div class=\"navigation visible-xs\">\n        <md-menu #appMenu=\"mdMenu\">\n          <button md-menu-item> Our Scientists </button>\n          <button *ngIf=\"!authentication\" appPaint md-menu-item [routerLink]=\"['/new-scientist']\">\n            join troop\n          </button>\n          <button *ngIf=\"authentication\" class=\"text-uppercase\" appPaint md-button (click)=\"logout()\">\n            Logout\n          </button>\n        </md-menu>\n        <button md-icon-button [mdMenuTriggerFor]=\"appMenu\">\n         <md-icon>more_vert</md-icon>\n        </button>\n      </div>\n    </md-toolbar>\n  </div>\n</header>\n"
 
 /***/ }),
 
@@ -440,168 +421,65 @@ var _a;
 
 /***/ }),
 
-/***/ "./src/app/my-new-component/my-new-component.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<md-input-container>\n  <input mdInput placeholder=\"Name\" #inputMarker (keyup.enter)=\"addNameToList(inputMarker.value)\">\n</md-input-container>\n<br>\n<button md-raised-button (click)=\"addNameToList(inputMarker.value)\">PUSH</button>\n\n<md-list>\n <md-list-item *ngFor=\"let item of list; let i = index\"> {{item}} {{i}} </md-list-item>\n</md-list>\n"
-
-/***/ }),
-
-/***/ "./src/app/my-new-component/my-new-component.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/my-new-component/my-new-component.component.ts":
+/***/ "./src/app/material/material.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyNewComponentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 
-var MyNewComponentComponent = (function () {
-    function MyNewComponentComponent() {
-        this.list = [];
+
+
+var MaterialModule = (function () {
+    function MaterialModule() {
     }
-    MyNewComponentComponent.prototype.ngOnInit = function () {
-    };
-    MyNewComponentComponent.prototype.addNameToList = function (par) {
-        this.list.push(par);
-    };
-    return MyNewComponentComponent;
+    return MaterialModule;
 }());
-MyNewComponentComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
-        selector: 'app-my-new-component',
-        template: __webpack_require__("./src/app/my-new-component/my-new-component.component.html"),
-        styles: [__webpack_require__("./src/app/my-new-component/my-new-component.component.sass")]
-    }),
-    __metadata("design:paramtypes", [])
-], MyNewComponentComponent);
+MaterialModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdSnackBarModule */],
+        ],
+        declarations: [],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdSnackBarModule */],
+        ]
+    })
+], MaterialModule);
 
-//# sourceMappingURL=my-new-component.component.js.map
-
-/***/ }),
-
-/***/ "./src/app/pages/home/home.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"row home-container\">\n  <div class=\"col-sm-8 col-sm-offset-2\">\n    <div class=\"col-sm-4 list\">\n      <app-scientists-list></app-scientists-list>\n      <button\n        md-raised-button\n        class=\"text-uppercase join\"\n        [routerLink]=\"['new-scientist']\"\n        appPaint\n        (click)=\"setRouterParam('new-scientist')\">join troop</button>\n      <router-outlet></router-outlet>\n    </div>\n    <div class=\"col-sm-8 details\">\n      <app-scientists-details></app-scientists-details>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/pages/home/home.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".home-container {\n  padding: 32px; }\n\nbutton.join {\n  margin-top: 2rem; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/pages/home/home.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var HomeComponent = (function () {
-    function HomeComponent(fbData, scientistDisplayService, dialog, authService) {
-        var _this = this;
-        this.fbData = fbData;
-        this.scientistDisplayService = scientistDisplayService;
-        this.dialog = dialog;
-        this.authService = authService;
-        this.passMsg = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]();
-        this.fbData.listData().subscribe(function (scientists) {
-            _this.scientists = scientists;
-        });
-    }
-    HomeComponent.prototype.ngOnInit = function () { };
-    HomeComponent.prototype.setRouterParam = function (location) {
-        this.authService.setRouterParam(location);
-    };
-    HomeComponent.prototype.setDisplayScientist = function (num) {
-        this.scientistDisplayService.setNumber(num);
-        this.displayNumber = num;
-    };
-    return HomeComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["z" /* ViewChild */])('clickButton'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */]) === "function" && _a || Object)
-], HomeComponent.prototype, "clickButton", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["l" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]) === "function" && _b || Object)
-], HomeComponent.prototype, "passMsg", void 0);
-HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["q" /* Component */])({
-        selector: 'app-home',
-        template: __webpack_require__("./src/app/pages/home/home.component.html"),
-        styles: [__webpack_require__("./src/app/pages/home/home.component.sass")]
-    }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _f || Object])
-], HomeComponent);
-
-var _a, _b, _c, _d, _e, _f;
-//# sourceMappingURL=home.component.js.map
+//# sourceMappingURL=material.module.js.map
 
 /***/ }),
 
 /***/ "./src/app/scientists/edit-scientist/edit-scientist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>edit scientist</small></b></p>\n    <h1>{{scientist?.name}}</h1>\n    <form>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Name\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Dialog\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Power\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea mdInput placeholder=\"About\"></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Image URL\">\n        </md-input-container>\n      </div>\n    </form>\n    <button class=\"submit text-uppercase\" appPaint md-raised-button>update</button>\n  </div>\n</div>\n"
+module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>edit scientist</small></b></p>\n    <h1>{{scientist?.name}}</h1>\n    <form [formGroup]=\"editForm\">\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Name\" formControlName=\"name\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Dialog\" formControlName=\"dialog\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Power\" formControlName=\"power\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea mdInput placeholder=\"About\" formControlName=\"about\"></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Image URL\" formControlName=\"imgUrl\">\n        </md-input-container>\n      </div>\n      <button class=\"submit text-uppercase\" appPaint md-raised-button>update</button>\n    </form>\n    <button class=\"submit text-uppercase\" md-raised-button (click)=\"removeScientist()\">delete</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -627,9 +505,11 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditScientistComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -643,41 +523,121 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditScientistComponent = (function () {
-    function EditScientistComponent(routeParam, fbService) {
+    function EditScientistComponent(routeParam, fbService, snackbar, router) {
         this.routeParam = routeParam;
         this.fbService = fbService;
+        this.snackbar = snackbar;
+        this.router = router;
+        this.scientist = {};
     }
     EditScientistComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.routeParam.params.subscribe(function (param) {
-            _this.scientistNumber = param['id'];
+        this.editForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["i" /* FormGroup */]({
+            'name': new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* FormControl */](null, [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["g" /* Validators */].required]),
+            'dialog': new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* FormControl */](null),
+            'power': new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* FormControl */](null),
+            'about': new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* FormControl */](null),
+            'imgUrl': new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* FormControl */](null),
         });
-        this.fbService.listData().subscribe(function (scientist) {
-            _this.scientist = scientist[_this.scientistNumber];
-            console.log(_this.scientist);
+        this.routeParam.params.subscribe(function (param) {
+            _this.fbService.listData().subscribe(function (scientist) {
+                _this.scientist = scientist[param['id']];
+                _this.scientistName = _this.scientist['name'];
+                _this.id = _this.scientist['$key'];
+            });
+        });
+    };
+    // formForbiddenScientist(control: FormControl): Promise<any> | Observable<any> {
+    //   const promise = new Promise((resolve, reject) => {
+    //     this.fbData.list('/scientists').map((scientists) => {
+    //       scientists.array.forEach(element => {
+    //         if (element.name.indexOf(control.value)) {
+    //           resolve({ 'forbiddenName': true });
+    //         } else {
+    //           resolve(null);
+    //         }
+    //       });
+    //     });
+    //   });
+    //   return promise;
+    // }
+    EditScientistComponent.prototype.removeScientist = function () {
+        var _this = this;
+        this.fbService.removeScientist(this.id).then(function () {
+            _this.snackbar.snackBarMsg(_this.scientistName + " deleted");
+            _this.router.navigate(['/']);
         });
     };
     return EditScientistComponent;
 }());
 EditScientistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["q" /* Component */])({
         selector: 'app-edit-scientist',
         template: __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.html"),
         styles: [__webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
 ], EditScientistComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=edit-scientist.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/scientists/forms/Siteforms.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_material_module__ = __webpack_require__("./src/app/material/material.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__new_scientist_new_scientist_component__ = __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_scientist_edit_scientist_component__ = __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteFormsModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var SiteFormsModule = (function () {
+    function SiteFormsModule() {
+    }
+    return SiteFormsModule;
+}());
+SiteFormsModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__material_material_module__["a" /* MaterialModule */]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_4__new_scientist_new_scientist_component__["a" /* NewScientistComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__edit_scientist_edit_scientist_component__["a" /* EditScientistComponent */]
+        ]
+    })
+], SiteFormsModule);
+
+//# sourceMappingURL=Siteforms.module.js.map
 
 /***/ }),
 
 /***/ "./src/app/scientists/new-scientist/new-scientist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>add new</small></b></p>\n    <h1>Scientist</h1>\n    <form>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Name\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Dialog\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Power\">\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea mdInput placeholder=\"About\"></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input mdInput placeholder=\"Image URL\">\n        </md-input-container>\n      </div>\n    </form>\n    <button class=\"submit text-uppercase\" appPaint md-raised-button>submit</button>\n  </div>\n</div>\n"
+module.exports = "<div class=\"col-sm-8 col-sm-offset-2 edit-Scientist\">\n  <div class=\"col-sm-6 col-sm-offset-3\">\n    <p appPaint class=\"text-uppercase\"><b><small>add new</small></b></p>\n    <h1>Scientist</h1>\n    <form #formNew=\"ngForm\">\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input\n            name=\"name\"\n            [(ngModel)]=\"newMadScientist.name\"\n            mdInput\n            placeholder=\"Name\" required>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input\n            name=\"Dialog\"\n            [(ngModel)]=\"newMadScientist.Dialogue\"\n            #dialog=\"ngModel\"\n            mdInput\n            placeholder=\"Dialog\"\n            required>\n        </md-input-container>\n        <p *ngIf=\"dialog.invalid && dialog.touched\" > Please type a dialog! </p>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input\n            name=\"power\"\n            [(ngModel)]=\"newMadScientist.power\"\n            mdInput\n            placeholder=\"Power\" required>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <textarea\n            name=\"about\"\n            [(ngModel)]=\"newMadScientist.about\"\n            mdInput\n            placeholder=\"About\" required></textarea>\n        </md-input-container>\n      </div>\n      <div class=\"form-group\">\n        <md-input-container class=\"example-full-width\">\n          <input\n            name=\"img\"\n            [(ngModel)]=\"newMadScientist.imgUrl\"\n            mdInput\n            placeholder=\"Image URL\" required>\n        </md-input-container>\n      </div>\n    <button [disabled]=\"formNew.invalid\" (click)=\"addNewScientist()\" class=\"submit text-uppercase\" appPaint md-raised-button>submit</button>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -703,7 +663,8 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewScientistComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -715,23 +676,128 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NewScientistComponent = (function () {
-    function NewScientistComponent() {
+    function NewScientistComponent(fbase) {
+        this.fbase = fbase;
+        this.newMadScientist = {};
     }
     NewScientistComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.fbase.listData().subscribe(function (scientists) {
+            console.log(scientists);
+            _this.scientists = scientists;
+        });
+    };
+    NewScientistComponent.prototype.addNewScientist = function () {
+        this.fbase.addScientist(this.newMadScientist);
     };
     return NewScientistComponent;
 }());
 NewScientistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["q" /* Component */])({
         selector: 'app-new-scientist',
         template: __webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.html"),
         styles: [__webpack_require__("./src/app/scientists/new-scientist/new-scientist.component.sass"), __webpack_require__("./src/app/scientists/edit-scientist/edit-scientist.component.sass")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _a || Object])
 ], NewScientistComponent);
 
+var _a;
 //# sourceMappingURL=new-scientist.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/scientists/scientist-home/scientist-home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row home-container\">\n  <div class=\"col-md-8 col-md-offset-2\">\n    <div class=\"col-sm-4 list\">\n      <app-scientists-list></app-scientists-list>\n      <button\n        md-raised-button\n        class=\"text-uppercase join\"\n        [routerLink]=\"['new-scientist']\"\n        appPaint\n        (click)=\"setRouterParam('new-scientist')\">join troop</button>\n      <router-outlet></router-outlet>\n    </div>\n    <div class=\"col-sm-8 details\">\n      <app-scientists-details></app-scientists-details>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/scientists/scientist-home/scientist-home.component.sass":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".home-container {\n  padding: 32px; }\n\nbutton {\n  margin-left: 20px; }\n  @media screen and (min-width: 768px) {\n    button.join {\n      margin-top: 2rem; } }\n\n@media screen and (max-width: 768px) {\n  div.list {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin-bottom: 2rem; } }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/scientists/scientist-home/scientist-home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__ = __webpack_require__("./src/app/shared/services/auth-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__ = __webpack_require__("./src/app/shared/services/dialog.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__ = __webpack_require__("./src/app/shared/services/scientist-display.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__ = __webpack_require__("./src/app/shared/services/firebase.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScientistHomeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ScientistHomeComponent = (function () {
+    function ScientistHomeComponent(fbData, scientistDisplayService, dialog, authService) {
+        var _this = this;
+        this.fbData = fbData;
+        this.scientistDisplayService = scientistDisplayService;
+        this.dialog = dialog;
+        this.authService = authService;
+        this.passMsg = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]();
+        this.fbData.listData().subscribe(function (scientists) {
+            _this.scientists = scientists;
+        });
+    }
+    ScientistHomeComponent.prototype.ngOnInit = function () { };
+    ScientistHomeComponent.prototype.setRouterParam = function (location) {
+        this.authService.setRouterParam(location);
+    };
+    ScientistHomeComponent.prototype.setDisplayScientist = function (num) {
+        this.scientistDisplayService.setNumber(num);
+        this.displayNumber = num;
+    };
+    return ScientistHomeComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["z" /* ViewChild */])('clickButton'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* ElementRef */]) === "function" && _a || Object)
+], ScientistHomeComponent.prototype, "clickButton", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["l" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* EventEmitter */]) === "function" && _b || Object)
+], ScientistHomeComponent.prototype, "passMsg", void 0);
+ScientistHomeComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["q" /* Component */])({
+        selector: 'app-scientist-home',
+        template: __webpack_require__("./src/app/scientists/scientist-home/scientist-home.component.html"),
+        styles: [__webpack_require__("./src/app/scientists/scientist-home/scientist-home.component.sass")]
+    }),
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_firebase_service__["a" /* FirebaseService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_scientist_display_service__["a" /* ScientistDisplayService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_dialog_service__["a" /* DialogService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_services_auth_service__["a" /* AuthService */]) === "function" && _f || Object])
+], ScientistHomeComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=scientist-home.component.js.map
 
 /***/ }),
 
@@ -823,7 +889,7 @@ var _a, _b, _c;
 /***/ "./src/app/scientists/scientists-list/scientists-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-list>\n  <a class=\"list-item\" *ngFor=\"let scientist of scientists; let i = index\" (click)=\"setDisplayNumber(i)\">\n    <md-list-item>\n      <md-icon md-list-icon>account_box</md-icon>\n      <h4 md-line>{{scientist.name}}</h4>\n      <p md-line> {{scientist.dialogue}} </p>\n    </md-list-item>\n    <md-divider></md-divider>\n  </a>\n</md-list>\n"
+module.exports = "<md-list class=\"visible-sm visible-md visible-lg\">\n  <h3 md-subheader>All SCIENTISTS</h3>\n  <a class=\"list-item\"\n    *ngFor=\"let scientist of scientists; let i = index\"\n    (click)=\"setDisplayNumber(i)\">\n    <md-list-item>\n      <md-icon md-list-icon>account_box</md-icon>\n      <h4 md-line>{{scientist.name}}</h4>\n      <p md-line> {{scientist.dialogue}} </p>\n    </md-list-item>\n  </a>\n</md-list>\n\n<button md-button [mdMenuTriggerFor]=\"appMenu\" class=\"visible-xs\">\n  <md-icon>list</md-icon> <span>ALL SCIENTISTS</span>\n</button>\n<md-menu #appMenu=\"mdMenu\">\n  <button\n    md-menu-item\n    *ngFor=\"let scientist of scientists; let i = index\"\n    (click)=\"setDisplayNumber(i)\">\n    <span> <md-icon>account_box</md-icon> {{scientist.name}} </span>\n  </button>\n</md-menu>\n"
 
 /***/ }),
 
@@ -835,7 +901,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".mat-button, .mat-icon-button, .mat-raised-button {\n  color: #e23636 !important; }\n\na.list-item {\n  text-decoration: none;\n  cursor: pointer;\n  display: block;\n  transition: all .2s ease; }\n  a.list-item:hover {\n    background-color: rgba(128, 128, 128, 0.1); }\n", ""]);
+exports.push([module.i, "a.list-item {\n  text-decoration: none;\n  cursor: pointer;\n  display: block;\n  transition: all .2s ease; }\n  a.list-item:hover {\n    background-color: rgba(128, 128, 128, 0.1); }\n", ""]);
 
 // exports
 
@@ -895,6 +961,86 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "./src/app/server/server/server.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_environment__ = __webpack_require__("./src/app/firebase-environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__ = __webpack_require__("./node_modules/angularfire2/auth.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServerModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var ServerModule = (function () {
+    function ServerModule() {
+    }
+    return ServerModule;
+}());
+ServerModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_3__firebase_environment__["a" /* environment */].firebase, 'my-app'),
+            __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+            __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["b" /* AngularFireAuthModule */]
+        ],
+        declarations: [],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2__["a" /* AngularFireModule */],
+            __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+            __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["b" /* AngularFireAuthModule */]
+        ]
+    })
+], ServerModule);
+
+//# sourceMappingURL=server.module.js.map
+
+/***/ }),
+
+/***/ "./src/app/shared/pipes/shorten.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShortenPipe; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ShortenPipe = (function () {
+    function ShortenPipe() {
+    }
+    ShortenPipe.prototype.transform = function (value, args) {
+        return value.substr(0, args);
+    };
+    return ShortenPipe;
+}());
+ShortenPipe = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Pipe */])({
+        name: 'shorten'
+    })
+], ShortenPipe);
+
+//# sourceMappingURL=shorten.pipe.js.map
+
+/***/ }),
+
 /***/ "./src/app/shared/services/auth-guard.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -939,7 +1085,7 @@ var AuthGuardService = (function () {
 }());
 AuthGuardService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["b" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__dialog_service__["a" /* DialogService */]) === "function" && _c || Object])
 ], AuthGuardService);
 
 var _a, _b, _c;
@@ -1017,7 +1163,7 @@ var AuthService = (function () {
 }());
 AuthService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["j" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["j" /* MdDialog */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["k" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["k" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["a" /* MdDialog */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["b" /* MdSnackBar */]) === "function" && _d || Object])
 ], AuthService);
 
 var _a, _b, _c, _d;
@@ -1056,7 +1202,7 @@ var DialogService = (function () {
 }());
 DialogService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialog */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */]) === "function" && _a || Object])
 ], DialogService);
 
 var _a;
@@ -1087,13 +1233,23 @@ var FirebaseService = (function () {
         this.db = db;
     }
     FirebaseService.prototype.listData = function () {
-        return this.db.list('/scientists');
+        this.scientists = this.db.list('/scientists').catch(function (err) {
+            console.log(err);
+            return err;
+        });
+        return this.scientists;
+    };
+    FirebaseService.prototype.addScientist = function (newScientist) {
+        return this.db.list('/scientists').push(newScientist);
+    };
+    FirebaseService.prototype.removeScientist = function (id) {
+        return this.scientists.remove(id);
     };
     return FirebaseService;
 }());
 FirebaseService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["b" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["b" /* AngularFireDatabase */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object])
 ], FirebaseService);
 
 var _a;
